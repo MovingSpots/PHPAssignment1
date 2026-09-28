@@ -31,18 +31,3 @@ This assignment demonstrates read and display operations. The `.sql` file is com
 > Thank you,  
 > Selvaraj Thyagarajan
 
-## File layout
-
-```text
-PHPAssignment1/
-├── .gitignore
-├── README.md
-├── database.php
-├── database_error.php
-├── footer.php
-├── header.php
-├── index.php
-├── styles.css
-└── sql/
-    └── community_programs.sql
-```
