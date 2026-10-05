@@ -16,9 +16,13 @@ $pageTitle = $pageTitle ?? 'Community Program Directory';
     <header class="site-header">
         <div class="container header-content">
             <a class="brand" href="index.php">Community Program Directory</a>
+<<<<<<< HEAD
             <nav aria-label="Main navigation">
                 <a href="index.php">Programs</a>
                 <a class="button button-small" href="add_program.php">Add Program</a>
             </nav>
+=======
+            <span class="tagline">A PHP &amp; MySQL class project</span>
+>>>>>>> 73ffeb271caf12205aa74ba002f6d0e88442fa46
         </div>
     </header>
