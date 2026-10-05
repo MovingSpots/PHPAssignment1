@@ -62,25 +62,6 @@ FROM programs AS p
 INNER JOIN categories AS c ON p.category_id = c.category_id
 ```
 
-## Upgrade an existing Assignment 1 installation
-
-1. Keep this folder named `PHPAssignment1` in XAMPP's `htdocs` folder.
-   - macOS default: `/Applications/XAMPP/xamppfiles/htdocs/PHPAssignment1`
-   - Windows default: `C:\xampp\htdocs\PHPAssignment1`
-2. Start **Apache** and **MySQL** in XAMPP.
-3. Open `http://localhost/phpmyadmin/`.
-4. Before changing the schema, select `community_programs`, choose **Export**, use **Quick**, and save a backup.
-5. Select the **Import** tab and import `sql/upgrade_assignment2.sql` exactly once.
-6. Open `http://localhost/PHPAssignment1/`.
-
-The upgrade script preserves the Assignment 1 program records. It copies the old text categories to the new `categories` table, connects each program using `category_id`, adds `image_filename`, creates the foreign key, and removes the old duplicate category text column.
-
-Do not import the upgrade script a second time because the columns and foreign-key constraint will already exist.
-
-### Clean-install alternative
-
-If the Assignment 1 database does not exist, or you intentionally want to reset only the project tables, import `sql/full_setup_assignment2.sql`. **This script drops and recreates the `programs` and `categories` tables, so it removes records currently in those two tables.** It then inserts eight sample programs and eight categories.
-
 ## Database connection
 
 `database.php` uses the common local XAMPP settings:
@@ -123,40 +104,6 @@ If image upload works in PHP but reports that the file cannot be saved on macOS,
 - Delete is completed by POST only and includes a confirmation page.
 - Technical database messages are logged instead of shown to visitors.
 - The layout is responsive and labels are connected to their form fields.
-
-## Commit and push to the existing repository
-
-Open the VS Code terminal inside `PHPAssignment1` and check the remote:
-
-```bash
-git status
-git remote -v
-```
-
-The expected origin is:
-
-```text
-https://github.com/MovingSpots/PHPAssignment1.git
-```
-
-Then commit and push Assignment 2:
-
-```bash
-git add .
-git commit -m "Complete Assignment 2 CRUD relationships and image upload"
-git pull origin main --no-rebase
-git push origin main
-```
-
-If `git pull` reports a conflict, resolve the named file in VS Code, save it, run `git add .`, make the merge commit, and push again. Do not use a force push.
-
-Verify the result at `https://github.com/MovingSpots/PHPAssignment1` and submit:
-
-```text
-https://github.com/MovingSpots/PHPAssignment1.git
-```
-
-## Suggested message to Professor Jasper
 
 Dear Professor Jasper,
 
