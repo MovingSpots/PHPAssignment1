@@ -145,4 +145,3 @@ This assignment demonstrates read and display operations. The `.sql` file is com
 > Thank you,  
 > Selvaraj Thyagarajan
 
->>>>>>> 73ffeb271caf12205aa74ba002f6d0e88442fa46
