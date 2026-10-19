@@ -28,7 +28,6 @@ This project continues the same `PHPAssignment1` repository used for Assignments
 - `add_program.php` explains that the image can be previewed before saving.
 - `edit_program.php` explains image replacement and removal.
 - `styles.css` styles the preview panel and responsive details page.
-- `README.md` documents Assignment 4 installation, testing, and submission.
 
 ## Project structure
 
@@ -97,51 +96,6 @@ program_details.php?id=1
 
 The details page validates the ID and uses a PDO prepared statement with an `INNER JOIN` between `programs` and `categories`. It returns a friendly 404 page if the record no longer exists. All displayed database text is escaped with `htmlspecialchars` through `escapeHtml()`.
 
-## Install the Assignment 4 upgrade on macOS
-
-### Protect your existing work
-
-Before copying files, open Terminal inside the existing project and run:
-
-```bash
-git status
-```
-
-If it says `working tree clean`, download the newest GitHub history:
-
-```bash
-git pull origin main --no-rebase
-```
-
-If you have uncommitted work, commit it before pulling.
-
-### Copy the upgraded project
-
-1. Extract the Assignment 4 ZIP.
-2. Back up your existing folder:
-
-   ```text
-   /Applications/XAMPP/xamppfiles/htdocs/PHPAssignment1
-   ```
-
-3. Copy the contents of the extracted `PHPAssignment1` folder into the existing XAMPP `PHPAssignment1` folder.
-4. Choose **Replace** when macOS asks about matching project files.
-5. Do not delete the hidden `.git` folder in your existing project.
-6. Existing uploaded images can remain in `uploads/`; copying the upgrade does not require deleting them.
-
-### Start and open the application
-
-1. Start **Apache** and **MySQL** in XAMPP Manager.
-2. Open:
-
-   ```text
-   http://localhost/PHPAssignment1/
-   ```
-
-No new SQL import is required if the Assignment 2 database is working. Assignment 4 uses the existing `community_programs` database, `programs.image_filename`, and `categories` relationship.
-
-For a completely new installation only, import `sql/full_setup_assignment2.sql` through phpMyAdmin. That script resets the two project tables and their sample records.
-
 ## Complete Assignment 4 test checklist
 
 ### Test image preview while adding
@@ -186,70 +140,6 @@ For a completely new installation only, import `sql/full_setup_assignment2.sql` 
 4. Resize the browser and confirm the details page changes from two columns to one column.
 5. Use the Tab key to confirm buttons, form controls, and links receive visible focus.
 
-### macOS upload permission troubleshooting
-
-If PHP reports that an otherwise valid image cannot be saved, open Terminal inside `PHPAssignment1` and, for this local XAMPP classroom project only, run:
-
-```bash
-chmod 777 uploads
-```
-
-Do not use permission `777` on a public production server.
-
-## Commit and push to the existing GitHub repository
-
-From the existing `PHPAssignment1` project terminal, verify the remote:
-
-```bash
-git status
-git remote -v
-```
-
-The expected origin is:
-
-```text
-https://github.com/MovingSpots/PHPAssignment1.git
-```
-
-Commit Assignment 4:
-
-```bash
-git add .
-git commit -m "Complete Assignment 4 image preview update and details page"
-git push origin main
-```
-
-If `origin` is missing, add it:
-
-```bash
-git remote add origin https://github.com/MovingSpots/PHPAssignment1.git
-```
-
-If `origin` exists but has the wrong address:
-
-```bash
-git remote set-url origin https://github.com/MovingSpots/PHPAssignment1.git
-```
-
-Do not force-push. If Git reports a conflict, finish or abort the current merge before starting another pull.
-
-Verify the uploaded files at:
-
-```text
-https://github.com/MovingSpots/PHPAssignment1
-```
-
-Submit:
-
-```text
-https://github.com/MovingSpots/PHPAssignment1.git
-```
-
-## Suggested submission message
-
-Dear Professor Jasper,
-
-I have completed MWD4A Assignment 4 by upgrading my existing PHPAssignment1 Community Program Directory. The application now provides image preview before submission, image replacement and removal during updates, and a dedicated responsive details page for each program.
 
 Repository: https://github.com/MovingSpots/PHPAssignment1.git
 
