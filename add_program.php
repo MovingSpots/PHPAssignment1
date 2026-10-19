@@ -63,7 +63,7 @@ require __DIR__ . '/header.php';
     <section class="page-heading">
         <p class="eyebrow">Create</p>
         <h1>Add a community program</h1>
-        <p>Complete the fields below. The new record will be saved to MySQL.</p>
+        <p>Complete the fields below and preview the optional image before saving the record.</p>
     </section>
     <?php require __DIR__ . '/program_form.php'; ?>
 </main>

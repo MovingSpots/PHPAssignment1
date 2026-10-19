@@ -85,7 +85,7 @@ require __DIR__ . '/header.php';
     <section class="page-heading">
         <p class="eyebrow">Update</p>
         <h1>Edit community program</h1>
-        <p>Change the information or replace the program image.</p>
+        <p>Change the information, preview a replacement image, or remove the current image.</p>
     </section>
     <?php require __DIR__ . '/program_form.php'; ?>
 </main>
